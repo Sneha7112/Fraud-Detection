@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9;
+        }
+
+        .result-container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 60px; /* Adjust margin-top to create space for the navbar */
+        }
+
+        h1 {
+            color: #007bff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        p {
+            font-size: 18px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .invalid {
+            color: red;
+        }
+
+        .go-back-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+  
+    <div class="result-container">
+        <h1>Prediction Result</h1>
+        {% if prediction_result == "Non-Fraud" %}
+            <p class="text-success">Normal Transaction</p>
+        {% elif prediction_result == "Fraud" %}
+            <p class="text-warning">Fraud Transaction</p>
+        {% else %}
+            <p class="invalid">Invalid prediction result</p>
+        {% endif %}
+        <a href="/prediction" class="btn btn-primary go-back-btn">Check another</a>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

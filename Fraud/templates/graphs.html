@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>graphs</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/layout/styles/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: transparent; 
+        }
+
+        #splh {
+            background-color: white;
+            color: red;
+            padding: 10px;
+            margin: 0 auto;
+            width: fit-content;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .graphs-container {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .graph {
+            margin: 20px;
+        }
+
+        #performance-metrics {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        #performance-metrics pre {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+      
+        #piechart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; 
+        }
+
+        #piechart_3d {
+            width: 80%; 
+            max-width: 900px; 
+            height: 500px;
+            margin-right: -240px; 
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+  
+    <header class="main-header">
+        <h1><font face="Cooper"> Fraud Detection Using Machine Learning</font></h1>
+    </header>
+  
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="active">Home</a>
+            </li>
+
+            <li>
+                <a href="/prediction">Prediction</a>
+            </li>
+            <li>
+                <a href="/analysis">Analysis</a>
+            </li>
+            <li>
+                <a href="/graphs">Graphs</a>
+            </li>
+            <li>
+                <a href="/">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <br><br>
+    <center>
+        <br>
+        <h1>Confusion Matrix</h1>
+        <img src="../static/img/cm.png" alt="Confusion Matrix" width="400px" height="400px">
+        <h1>Comparison Graph</h1>
+        <img src="../static/img/cg.png" alt="Comparison Graph" width="400px" height="400px">
+        <h1>Pie Chart</h1>
+       
+        <div id="piechart-container">
+            <div id="piechart_3d"></div>
+        </div>
+       
+     
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+        
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Percentage'],
+                    ['Fraud', 1.8],
+                    ['Non-Fraud', 98.2]
+                ]);
+        
+                var options = {
+                    title: 'Percentage of Fraud and Non-Fraud Cases',
+                    is3D: true, 
+                    backgroundColor: 'transparent' 
+                };
+        
+                var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        
+                chart.draw(data, options);
+            }
+        </script>
+    </center>
+</body>
+
+</html>

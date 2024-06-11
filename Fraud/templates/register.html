@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet" type="text/css" href="../static/layout/styles/style.css">
+</head>
+
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <h1><font face="Cooper">Fraud Detection Using Machine Learning</font></h1>
+    </header>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li>
+                <a href="/"> Home</a>
+            </li>
+
+            <li>
+                <a href="/register" class="active">Register</a>
+            </li>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <!--Login Form-->
+    <div class="login">
+            <h2 class="text">Sign In</h2>
+            <form  method="POST" action="/register" style="margin-top: 40px;">
+            <div class="input-group">
+                <input type="text" name="username" required="">
+                <span>Username</span>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" required="">
+                <span>Email</span>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" required="">
+                <span>Password</span>
+            </div>
+            <div class="input-group">
+                <input type="submit" name="" required="" value="Register">
+            </div>
+        </form>
+    </div>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      
+            
+                <i class="fa fa-user-circle"></i> 
+            </a>
+        </p>
+    </footer>
+</body>
+
+</html>

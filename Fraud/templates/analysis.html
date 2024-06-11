@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/layout/styles/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #splh {
+            background-color: white;
+            color: red;
+            padding: 10px;
+            margin: 0 auto;
+            width: fit-content;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .graphs-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .graph {
+            margin: 20px;
+        }
+
+        #performance-metrics {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
+
+        #performance-metrics pre {
+            margin-right:100px ;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            line-height: 2;
+            font-weight: bold; /* Make the font bold */
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+ 
+    <header class="main-header">
+        <h1><font face="Cooper"> Fraud Detection Using Machine Learning</font></h1>
+    </header>
+  
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="active">Home</a>
+            </li>
+
+            <li>
+                <a href="/prediction">Prediction</a>
+            </li>
+            <li>
+                <a href="/analysis">Analysis</a>
+            </li>
+            <li>
+                <a href="/graphs">Graphs</a>
+            </li>
+            <li>
+                <a href="/">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <br><br>
+    <center>
+        <br>
+
+        <div class="graphs-container">
+            <div class="graph">
+                <h1 id="splh">Performance Metrics</h1><br><br>
+                <div id="performance-metrics">
+                    <pre>
+                        <b>precision    recall  f1-score</b>  
+                       0       1.00      1.00      1.00    
+                       1       0.90      0.78      0.83
+                    </pre>
+                </div>
+               
+            </div>
+        </div>
+        
+        <h3 id="splh">The Accuracy of the Model (Random Forest) is 99.47%</h3>
+    </center>
+</body>
+
+</html>
